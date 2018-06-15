@@ -1,0 +1,24 @@
+{
+  "GameCardId": "AT_053",
+  "ConfigComment": "先祖知识",
+
+  "BeforeUseHeroPowerBonus": {
+    "values": [
+      {
+        "comment": "手牌少于3张，优先使用",
+        "condition": "my_hand(count()) < 3",
+        "value": "90",
+      },
+      {
+        "comment": "敌方生命值低于10，并且我方手牌小于9张，优先使用",
+        "condition": "opp_hero(count(), health) < 10 AND my_hand(count()) < 9",
+        "value": "100",
+      },
+      {
+        "comment": "我方手牌大于等于9张，不使用",
+        "condition": "my_hand(count()) >= 9",
+        "value": "-100",
+      },
+    ],
+  },
+}

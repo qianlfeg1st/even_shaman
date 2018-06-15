@@ -1,0 +1,14 @@
+{
+  "GameCardId": "EX1_586",
+  "ConfigComment": "海巨人",
+
+  "BeforePlayCardBonus": {
+    "values": [
+      {
+        "comment": "我方+敌方随时总数 大于等于5，优先使用",
+        "condition": "(opp_minions(count()) + my_minions(count())) >= 5",
+        "value": "50",
+      },
+    ],
+  }
+}

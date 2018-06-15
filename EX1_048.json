@@ -1,0 +1,39 @@
+{
+  "GameCardId": "EX1_048",
+  "ConfigComment": "破法者",
+
+  "BeforeBattlecryTargetBonus": {
+    "values": [
+      {
+        "comment": "沉默敌方的苦潮多头蛇，不使用",
+        "condition": "my_target(count(), cardid=UNG_087) > 0 AND opp_minions(count(), cardid = UNG_087) > 0",
+        "value": "-100",
+      },
+      {
+				"comment":"沉默我方的苦潮多头蛇，优先使用",
+				"condition": "my_target(count(), cardid = UNG_087) > 0 AND opp_minions(count(), cardid = UNG_087) < 1",
+				"value":"20",
+			},
+      {
+        "comment": "沉默下面列出的卡牌，优先使用",
+        "condition": "my_target(count(), cardid=LOOT_306|LOOT_368|LOOT_161|NEW1_021)>0",
+        "value": "50",
+      },
+      {
+        "comment":"沉默嘲讽随从，优先使用",
+        "condition": "my_target(count(), taunt = true) > 0",
+        "value": "25",
+      }
+    ],
+  },
+
+  "BeforePlayCardBonus": {
+    "values": [
+      {
+        "comment": "敌方空场，不使用",
+        "condition": "opp_minions(count()) == 0",
+        "value": "-15",
+      },
+    ],
+  }
+}

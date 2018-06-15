@@ -1,0 +1,39 @@
+﻿{
+  "GameCardId": "Mulligan",
+  "ConfigComment": "留牌策略",
+
+  "Mulligan": {
+    "values": [
+			{
+        "comment": "默认留牌：青玉之爪、恐狼前锋、阴燃电鳗、图腾魔像",
+        "mulligan": "CFM_717,EX1_162,GIL_530,AT_052",
+        "condition": "my_hero(count(),shaman)>0",
+        "value": "hold",
+      },
+      {
+        "comment": "后手留牌：深渊魔物",
+        "mulligan": "OG_028",
+        "condition": "coin AND my_hero(count(),shaman) > 0",
+        "value": "hold",
+      },
+			{
+        "comment": "术士留牌：投火无面者",
+        "mulligan": "OG_024",
+        "condition": "opp_hero(count(), hero_class=warlock)>0",
+        "value": "hold",
+      },
+      {
+        "comment": "后手留牌(圣骑士)：大漩涡传送门",
+        "mulligan": "KAR_073",
+        "condition": "coin AND opp_hero(count(), hero_class=paladin)>0",
+        "value": "hold",
+      },
+      {
+        "comment": "换掉所有上面没有列出的卡牌",
+        "mulligan": "*",
+        "condition": "my_hero(count(),shaman)>0",
+        "value": "discard",
+      }
+    ],
+  },
+}
